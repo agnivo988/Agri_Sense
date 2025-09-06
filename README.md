@@ -7,7 +7,7 @@ AI-powered monitoring of **crop health**, **soil condition**, and **pest risks**
 
 This project is split into:
 - **Frontend** → Next.js + TypeScript + Tailwind (App Router)  
-- **Backend** → Express.js + TypeScript (REST API)  
+- **Backend** → node.js  
 
 ---
 
@@ -20,8 +20,7 @@ This project is split into:
 
 ### Backend
 - [Node.js](https://nodejs.org/)  
-- [Express.js](https://expressjs.com/)  
-- [TypeScript](https://www.typescriptlang.org/)  
+- [Express.js](https://expressjs.com/)   
 - [Nodemon](https://nodemon.io/)  
 
 ---
@@ -33,7 +32,7 @@ This project is split into:
 
 ## ⚡ Getting Started
 
-### 1. Clone the repository
+
 ```bash
 git clone https://github.com/USERNAME/REPO-NAME.git
 cd REPO-NAME
