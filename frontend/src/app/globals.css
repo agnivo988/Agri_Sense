@@ -24,3 +24,43 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* globals.css */
+
+/* Shining animation for feature cards */
+.shine {
+  position: absolute;
+  top: -50%;
+  left: -150%;
+  width: 250%;
+  height: 200%;
+  transform: rotate(20deg);
+  background: linear-gradient(
+    90deg,
+    rgba(202, 8, 8, 0) 0%,
+    rgba(38, 156, 5, 0.75) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  opacity: 0;
+  pointer-events: none; /* don't block clicks */
+}
+
+.group:hover .shine {
+  animation: shine 1s ease-in-out;
+  opacity: 1;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) rotate(20deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(20deg);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
