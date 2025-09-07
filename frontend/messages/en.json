@@ -1,0 +1,26 @@
+{
+  "Navbar": {
+    "home": "Home",
+    "features": "Features",
+    "about": "About Us",
+    "program" : "Program",
+    "contact": "Contact",
+    "signin": "Sign In",
+    "login": "Log In",
+    "language": "Language"
+  },
+  "Home": {
+    "title": "Welcome to AgriSense",
+    "subtitle": "AI-powered agriculture solutions for farmers"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "We provide modern agricultural technologies to empower farmers."
+  },
+  "features": {
+    "title": "Our Features",
+    "f1": "Crop Health Monitoring",
+    "f2": "Soil Condition Analysis",
+    "f3": "Pest Risk Prediction"
+  }
+}

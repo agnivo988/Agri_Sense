@@ -5,6 +5,7 @@ import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Globe } from "lucide-react";
 import { useTranslation } from "next-i18next";
+import Link from "next/link";
 
 export default function Navbar() {
   const router = useRouter();
@@ -24,13 +25,11 @@ export default function Navbar() {
     { code: "mr", label: "मराठी(Marathi)" },
   ];
 
-    const links = ["home", "features", "about", "programs", "contact"];
+  const links = ["home", "features", "about", "programs", "contact"];
 
   const changeLanguage = (lang: string) => {
-    const params = searchParams.toString();
-    const url = params ? `${pathname}?${params}` : pathname;
-
-    router.push(`/${lang}${url}`); // prepend the locale to path
+    // Refresh page to apply the new language
+    router.refresh();
     setLangOpen(false);
   };
 
@@ -62,12 +61,22 @@ export default function Navbar() {
           ))}
 
           {/* Buttons */}
-          <button className="px-4 py-2 bg-white text-green-700 rounded-lg font-semibold hover:bg-gray-100 transition cursor-pointer">
+
+          <Link
+            href="/signup"
+            className="px-4 py-2 bg-white text-green-700 rounded-lg font-semibold hover:bg-gray-100 transition cursor-pointer"
+          >
             {t("signin")}
-          </button>
-          <button className="px-4 py-2 border border-white text-white rounded-lg hover:bg-white/10 transition cursor-pointer">
+          </Link>
+
+          <Link
+            href="/login"
+            className="px-4 py-2 border border-white text-white rounded-lg hover:bg-white/10 transition cursor-pointer"
+            role="button"
+            aria-label="Login"
+          >
             {t("login")}
-          </button>
+          </Link>
 
           {/* Language Switcher */}
           <div className="relative">
@@ -130,12 +139,19 @@ export default function Navbar() {
                 </a>
               ))}
 
-              <button className="px-4 py-2 bg-white text-green-700 rounded-lg font-semibold hover:bg-gray-100 transition">
+              <Link
+                href="/signup"
+                className="px-4 py-2 bg-white text-green-700 rounded-lg font-semibold hover:bg-gray-100 transition"
+              >
                 {t("signin")}
-              </button>
-              <button className="px-4 py-2 border border-white text-white rounded-lg hover:bg-white/10 transition">
+              </Link>
+
+              <Link
+                href="/login"
+                className="px-4 py-2 border border-white text-white rounded-lg hover:bg-white/10 transition"
+              >
                 {t("login")}
-              </button>
+              </Link>
 
               {/* Language Switcher Mobile */}
               <div className="relative">
@@ -176,4 +192,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
