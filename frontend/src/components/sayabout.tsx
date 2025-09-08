@@ -108,7 +108,7 @@ export default function FarmersSay() {
               ))}
             </div>
             <p className="italic text-gray-600 max-w-xl">
-              "{testimonials[current].feedback}"
+              &quot;{testimonials[current].feedback}&quot;
             </p>
           </div>
 

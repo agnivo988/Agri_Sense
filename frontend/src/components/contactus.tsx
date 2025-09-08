@@ -10,7 +10,7 @@ export default function ContactUs() {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-green-700">Contact Us</h2>
           <p className="text-gray-600 mt-2">
-            Have questions about Agrisense? We're here to support farmers with
+            Have questions about Agrisense? We&apos;re here to support farmers with
             modern solutions and technology.
           </p>
         </div>
