@@ -66,7 +66,7 @@ export default function Navbar() {
             href="/signup"
             className="px-4 py-2 bg-white text-green-700 rounded-lg font-semibold hover:bg-gray-100 transition cursor-pointer"
           >
-            {t("signin")}
+            {t("SignUp")}
           </Link>
 
           <Link
@@ -75,7 +75,7 @@ export default function Navbar() {
             role="button"
             aria-label="Login"
           >
-            {t("login")}
+            {t("Login")}
           </Link>
 
           {/* Language Switcher */}

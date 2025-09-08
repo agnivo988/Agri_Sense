@@ -10,7 +10,10 @@ interface AuthFormProps {
 
 export default function AuthForm({ type }: AuthFormProps) {
   const [email, setEmail] = useState("");
+  const [fullname, setFullname] = useState("");
+  const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const isLogin = type === "login";
 
   return (
@@ -43,8 +46,33 @@ export default function AuthForm({ type }: AuthFormProps) {
         </p>
 
         <form className="space-y-4">
+          {!isLogin && (
+            <>
+              <div>
+                <label className="block mb-1 text-black font-medium">Full Name</label>
+                <input
+                  type="text"
+                  value={fullname}
+                  onChange={(e) => setFullname(e.target.value)}
+                  placeholder="Enter your full name"
+                  className="w-full border border-gray-300 p-2 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400"
+                />
+              </div>
+              <div>
+                <label className="block mb-1 text-black font-medium">Phone Number</label>
+                <input
+                  type="tel"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  placeholder="Enter your phone number"
+                  className="w-full border border-gray-300 p-2 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400"
+                />
+              </div>
+            </>
+          )}
+
           <div>
-            <label className="block mb-1 text-black font-medium">Email : </label>
+            <label className="block mb-1 text-black font-medium">Email</label>
             <input
               type="email"
               value={email}
@@ -56,7 +84,11 @@ export default function AuthForm({ type }: AuthFormProps) {
           <div>
             <label className="block mb-1 text-black font-medium flex justify-between">
               <span>Password</span>
-              {isLogin && <Link href="/forgot" className="text-green-600 text-sm">Forgot Password?</Link>}
+              {isLogin && (
+                <Link href="/forgot" className="text-green-600 text-sm">
+                  Forgot Password?
+                </Link>
+              )}
             </label>
             <input
               type="password"
@@ -67,10 +99,25 @@ export default function AuthForm({ type }: AuthFormProps) {
             />
           </div>
 
+          {!isLogin && (
+            <div>
+              <label className="block mb-1 text-black font-medium">Confirm Password</label>
+              <input
+                type="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                placeholder="Confirm your password"
+                className="w-full border border-gray-300 p-2 text-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
+              />
+            </div>
+          )}
+
           {isLogin && (
             <div className="flex items-center">
               <input type="checkbox" id="remember" className="mr-2" />
-              <label htmlFor="remember" className="text-gray-600">Remember me</label>
+              <label htmlFor="remember" className="text-gray-600">
+                Remember me
+              </label>
             </div>
           )}
 
@@ -100,3 +147,4 @@ export default function AuthForm({ type }: AuthFormProps) {
     </div>
   );
 }
+

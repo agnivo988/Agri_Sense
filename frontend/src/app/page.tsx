@@ -1,9 +1,15 @@
 "use client";
 
 import AboutSection from "@/components/AboutUs";
+import AgriculturalPrograms from "@/components/Agriculturalprogram";
+import ContactUs from "@/components/contactus";
 import FeaturesSection from "@/components/Features";
+import Footer from "@/components/footer";
 import Home from "@/components/Home";
+import ImpactSection from "@/components/ImpactSection";
 import Navbar from "@/components/Navbar"; // ✅ adjust path if needed
+import FarmersSay from "@/components/sayabout";
+import ImpactAcrossIndia from "@/components/statewiseImpact";
 
 export default function HomePage() {
   return (
@@ -16,6 +22,12 @@ export default function HomePage() {
        <Home/>
        <FeaturesSection/>
        <AboutSection/>
+       <ImpactSection/>
+       <ImpactAcrossIndia/>
+       <AgriculturalPrograms/>
+       <FarmersSay/>
+       <ContactUs/>
+       <Footer/>
       </main>
     </div>
   );
